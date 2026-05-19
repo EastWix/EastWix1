@@ -222,16 +222,47 @@
             flex-wrap: wrap;
         }
 
+        /* Instagram Footer - 3 accounts */
         .instagram-footer {
             text-align: center;
             margin-top: 30px;
             padding: 20px;
             border-top: 1px solid rgba(0, 180, 255, 0.3);
         }
-        .instagram-footer a {
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 10px;
+        }
+        
+        .social-links a {
             color: #ff66aa;
             text-decoration: none;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
+            transition: 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 8px 20px;
+            border-radius: 50px;
+            backdrop-filter: blur(5px);
+        }
+        
+        .social-links a:hover {
+            color: #ff99cc;
+            text-shadow: 0 0 10px #ff66aa;
+            background: rgba(255, 255, 255, 0.2);
+            transform: scale(1.05);
+        }
+        
+        .footer-text {
+            margin-top: 15px;
+            color: #88aaff;
+            font-size: 0.8rem;
         }
 
         .warning {
@@ -330,8 +361,22 @@
             <div id="rankAppliesForUsers"></div>
         </div>
 
+        <!-- Instagram Footer with 3 accounts -->
         <div class="instagram-footer">
-            <a href="https://instagram.com/adam_d3ibes" target="_blank">📷 Instagram: @adam_d3ibes</a>
+            <div class="social-links">
+                <a href="https://instagram.com/adam_d3ibes" target="_blank" rel="noopener noreferrer">
+                    📷 @adam_d3ibes
+                </a>
+                <a href="https://www.instagram.com/_ahmad_hussie/" target="_blank" rel="noopener noreferrer">
+                    📷 @_ahmad_hussien_
+                </a>
+                <a href="https://www.instagram.com/m07arab/" target="_blank" rel="noopener noreferrer">
+                    📷 @m07arab
+                </a>
+            </div>
+            <div class="footer-text">
+                EastWix Minecraft Server | Follow us on Instagram
+            </div>
         </div>
     </div>
 </div>
@@ -340,8 +385,8 @@
     // Data storage (LocalStorage)
     let users = JSON.parse(localStorage.getItem('eastwix_users')) || [];
     let complaints = JSON.parse(localStorage.getItem('eastwix_complaints')) || [];
-    let rankApplies = JSON.parse(localStorage.getItem('eastwix_rank_applies')) || []; // { id, rankName, endTime, createdBy }
-    let rankSubmissions = JSON.parse(localStorage.getItem('eastwix_rank_submissions')) || []; // { applyId, username, name, age, why, country, submittedAt }
+    let rankApplies = JSON.parse(localStorage.getItem('eastwix_rank_applies')) || [];
+    let rankSubmissions = JSON.parse(localStorage.getItem('eastwix_rank_submissions')) || [];
     
     let currentUser = null;
 
